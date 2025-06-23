@@ -4,7 +4,6 @@ from app.extensions import db, migrate
 from app.routes import register_routes
 
 def create_app(config_name="development"):
-    print('calling is:--')
     app = Flask(__name__)
     app.config.from_object(config_by_name[config_name])
 
@@ -19,5 +18,11 @@ def create_app(config_name="development"):
     token
 )
     register_routes(app)
-
+    # app.route("/")
+    # def index():
+    #     print('index is calling ...')
+    #     user = session.get("user")
+    #     if user:
+    #         return f"Welcome {user['name']} (<a href='/auth/logout'>Logout</a>)"
+    #     return "<a href='/auth/login'>Login with Google</a>"
     return app
