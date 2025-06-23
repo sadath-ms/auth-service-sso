@@ -87,3 +87,9 @@ Endpoint	Method	Description
 /users/<id>/roles	POST	Assign user roles
 /sessions	GET	View login history
 
+
+
+docker-compose exec web flask db init
+docker-compose exec web flask db migrate -m "Initial migration"
+docker-compose exec web flask db upgrade
+docker-compose exec web flask shell
